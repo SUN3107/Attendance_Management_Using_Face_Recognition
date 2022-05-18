@@ -1,0 +1,2 @@
+# Attendance_Management_Using_Face_Recognition
+An attendance management system using face recognition
