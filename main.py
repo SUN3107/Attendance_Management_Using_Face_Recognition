@@ -7,7 +7,7 @@ import tkinter
 import webbrowser
 from PIL import Image,ImageTk
 from colorama import Style
-from Student_details import student_details
+from Student import student_details
 
 class face_recognition:
     
