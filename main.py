@@ -1,15 +1,19 @@
 from cProfile import label
 from ctypes import alignment
+from mailbox import Mailbox
+import mailbox
 from os import link
 from tkinter import *
 from tkinter import ttk
+from tkinter import messagebox
 import tkinter
 import webbrowser
 from PIL import Image,ImageTk
 from colorama import Style
 from Student import student_details
+from train import train_data
 
-class face_recognition:
+class face_recognition(train_data):
     
     def __init__(self,root):
         self.root=root
@@ -67,7 +71,7 @@ class face_recognition:
         train_icon=train_icon.resize((220,220),Image.ANTIALIAS)
         self.photo_train_icon=ImageTk.PhotoImage(train_icon)
         
-        train_button=Button(main_frame,image=self.photo_train_icon,highlightthickness = 0, bd = 0,text="Train Data",font=("Quicksand",16,"bold"),bg='#EAE9CE', fg="darkblue",compound="top",cursor="hand2")
+        train_button=Button(main_frame,command=self.train_classify,image=self.photo_train_icon,highlightthickness = 0, bd = 0,text="Train Data",font=("Quicksand",16,"bold"),bg='#EAE9CE', fg="darkblue",compound="top",cursor="hand2")
         train_button.place(x=845,y=623,width=238,height=281)
 
 
@@ -79,7 +83,7 @@ class face_recognition:
         help_icon=help_icon.resize((220,220),Image.ANTIALIAS)
         self.photo_help_icon=ImageTk.PhotoImage(help_icon)
         
-        help_button=Button(main_frame,image=self.photo_help_icon,highlightthickness = 0, bd = 0,text="Help",font=("Quicksand",16,"bold"), bg="#D1EACD",fg="darkblue",compound="top",cursor="hand2")
+        help_button=Button(main_frame,image=self.photo_help_icon,command=self.help, highlightthickness = 0, bd = 0,text="Help",font=("Quicksand",16,"bold"), bg="#D1EACD",fg="darkblue",compound="top",cursor="hand2")
         help_button.place(x=1202,y=623,width=238,height=281)
 
 
@@ -167,8 +171,22 @@ class face_recognition:
     def student_details_page(self):
         self.new_window=Toplevel(self.root)
         self.app=student_details(self.new_window)
-        
 
+
+
+    def help(self):
+        recipient = 'sunidhiyadav99@gmail.com'
+        subject = 'mysubject'
+        webbrowser.open('mailto:?to=' + recipient + '&subject=' + subject, new=1)
+
+        #with open('body.txt', 'r') as b:
+            #body = b.read()
+
+        #body = body.replace(' ', '%20')
+
+        #webbrowser.open('mailto:?to=' + recipient + '&subject=' + subject + '&body=' + body, new=1)
+
+    
 
     def exit(self):
         exit=tkinter.messagebox.askyesno("Exit","Are you sure?", parent=self.root)
@@ -177,8 +195,7 @@ class face_recognition:
             self.root.destroy()
         else:
             return
-        
-    
+
 
 
 

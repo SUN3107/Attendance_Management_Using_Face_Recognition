@@ -14,7 +14,7 @@ from colorama import Style
 import pymysql
 import cv2
 
-class student_details:
+class student_details():
     def __init__(self,root):
         self.root=root
         self.root.geometry("1920x1080")
@@ -280,15 +280,14 @@ class student_details:
 
 
 
-        #   ############    ##        #
-        #   #               # #       #
-        #   #               #  #      #
-        #   #######         #   #     #
-        #   #               #    #    #
-        #   #               #     #   #
-        #   #               #      #  #
-        #   #               #       # #
-        #   #               #        ##
+
+
+
+
+
+
+
+
 
 
     def enter_value(self):
@@ -484,7 +483,7 @@ class student_details:
                     cv2.putText(face_var,str(image_id),(100,100),cv2.FONT_HERSHEY_COMPLEX_SMALL,2,(0,255,255),2)
                     cv2.imshow("Face",face_var)
 
-                    if cv2.waitKey(1)==13 or int(image_id)==250:
+                    if cv2.waitKey(1)==13 or int(image_id)==100:
                         break
 
                 cam_capture.release()
@@ -494,9 +493,7 @@ class student_details:
             except EXCEPTION as es:
                     messagebox.showerror("Error",f"Error occured due to:{str(es)}", parent=self.root)
 
-            
-
-            
+    
 
 
 
