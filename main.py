@@ -174,12 +174,12 @@ class face_recognition(train_data,face_recog):
 
 
     def student_details(self):
-        self.new_window=Toplevel(self.root)
-        self.app=student_details(self.new_window)
+        self.new_window=Toplevel(root)
+        app=student_details(self.new_window)
 
     def att_details(self):
-        self.new_window=Toplevel(self.root)
-        self.app=attendance_details(self.new_window)
+        self.new_window=Toplevel(root)
+        app=attendance_details(self.new_window)
 
 
 

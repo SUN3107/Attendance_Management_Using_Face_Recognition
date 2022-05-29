@@ -37,7 +37,7 @@ class student_details():
         
 
         #main_frame
-        main_frame=Label(width=878, height=722, bd=2, relief=RIDGE,bg='#EEF9FF' )
+        main_frame=Label(self.root, width=878, height=722,bd=2, relief=RIDGE,bg='#EEF9FF' )
         main_frame.place(x=0, y=0, width=1920, height=1080)
 
         #title
