@@ -55,7 +55,7 @@ class face_recognition(train_data,face_recog):
         attendance_icon=attendance_icon.resize((238,238),Image.ANTIALIAS)
         self.photo_attendance_icon=ImageTk.PhotoImage(attendance_icon)
         
-        attendance_button=Button(main_frame, command=self.attendance_details, image=self.photo_attendance_icon,highlightthickness = 0, bd = 0,text="Attendance Details",font=("Quicksand",16,"bold"),bg="#D1EACD", fg="darkblue",compound="top",cursor="hand2")
+        attendance_button=Button(main_frame, command=self.att_details, image=self.photo_attendance_icon,highlightthickness = 0, bd = 0,text="Attendance Details",font=("Quicksand",16,"bold"),bg="#D1EACD", fg="darkblue",compound="top",cursor="hand2")
         attendance_button.place(x=1559,y=232,width=238,height=281)
 
 
@@ -174,12 +174,12 @@ class face_recognition(train_data,face_recog):
 
 
     def student_details(self):
-        self.new_window=Toplevel(self.root)
-        self.app=student_details(self.new_window)
+        self.new_window=Toplevel(root)
+        app=student_details(self.new_window)
 
-    def attendance_details(self):
-        self.new_window=Toplevel(self.root)
-        self.app=attendance_details(self.new_window)
+    def att_details(self):
+        self.new_window=Toplevel(root)
+        app=attendance_details(self.new_window)
 
 
 
