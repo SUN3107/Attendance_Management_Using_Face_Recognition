@@ -1,11 +1,5 @@
-from cProfile import label
-from ctypes import alignment
-from mailbox import Mailbox
-import mailbox
 from os import link
 from tkinter import *
-from tkinter import ttk
-from tkinter import messagebox
 import tkinter
 import webbrowser
 from PIL import Image,ImageTk
@@ -118,6 +112,7 @@ class face_recognition(train_data,face_recog):
 
         T_app = Text(main_frame, height = 5,font =("Quicksand", 20), foreground="#001C8E",bg='#EEF9FF', width = 52,highlightthickness = 0, padx=10,bd = 0)
         T_dev = Text(main_frame, height = 5,font =("Quicksand", 19), width = 52, bg='#EEF9FF', highlightthickness = 0, padx=10,bd = 0)
+        T_contact = Text(main_frame, height = 5,font =("Quicksand", 19, "bold"), width = 52, bg='#EEF9FF', highlightthickness = 0, padx=10,bd = 0)
         
         AppInfo = """Application Details-
     This application has 6 options-
@@ -126,15 +121,17 @@ class face_recognition(train_data,face_recog):
     by showing your face in webcam
     3. Attendance Details: See the attendance 
     details recorded for the day
-    4. Train data Train the dataset
-    5. Help- Reach out to dev in case of any 
+    4. Train data: Train the dataset
+    5. Help: Reach out to dev in case of any 
     problem
-    6. Exit- Leave the application"""
+    6. Exit: Leave the application"""
 
         DevInfo="""Developer Information-
     Hello, I am Sunidhi Yadav, currently in 
     B.Tech. C.S.E. at IIT Roorkee. This is 
-    my first Python based ML project."""    
+    my first Python based ML project."""  
+
+        Contact="Contact-"  
                
 
         T_app.place(x=122,y=232,width=628,height=400)
@@ -145,6 +142,11 @@ class face_recognition(train_data,face_recog):
 
         T_dev.insert('end', DevInfo)
 
+        T_contact.place(x=157,y=760,width=628,height=60)
+
+        T_contact.insert('end', Contact)
+
+
 
         
         #github 
@@ -152,11 +154,11 @@ class face_recognition(train_data,face_recog):
         github=github.resize((50,50),Image.ANTIALIAS)
         self.photo_github=ImageTk.PhotoImage(github)
 
-        github_label = Label(main_frame, image=self.photo_github, bg="white", cursor= "hand2")
+        github_label = Label(main_frame, image=self.photo_github, bg="#EEF9FF", cursor= "hand2")
         github_label.pack
         github_url= 'https://github.com/SUN3107'
         github_label.bind("<Button-1>", lambda e:open_url(github_url))
-        github_label.place(x=222,y=750)
+        github_label.place(x=315,y=750)
 
 
         #linkedin 
@@ -164,11 +166,11 @@ class face_recognition(train_data,face_recog):
         linkedin=linkedin.resize((50,50),Image.ANTIALIAS)
         self.photo_linkedin=ImageTk.PhotoImage(linkedin)
 
-        linkedin_label = Label(main_frame, image=self.photo_linkedin, bg="white", cursor= "hand2")
+        linkedin_label = Label(main_frame, image=self.photo_linkedin, bg="#EEF9FF", cursor= "hand2")
         linkedin_label.pack
         linkedin_url= 'https://www.linkedin.com/in/sunidhi-yadav-3b7636231/'
         linkedin_label.bind("<Button-1>", lambda e:open_url(linkedin_url))
-        linkedin_label.place(x=300,y=750)
+        linkedin_label.place(x=400,y=750)
 
 
     def student_details(self):
@@ -182,16 +184,7 @@ class face_recognition(train_data,face_recog):
 
 
     def help(self):
-        recipient = 'sunidhiyadav99@gmail.com'
-        subject = 'mysubject'
-        webbrowser.open('mailto:?to=' + recipient + '&subject=' + subject, new=1)
-
-        #with open('body.txt', 'r') as b:
-            #body = b.read()
-
-        #body = body.replace(' ', '%20')
-
-        #webbrowser.open('mailto:?to=' + recipient + '&subject=' + subject + '&body=' + body, new=1)
+        help=tkinter.messagebox.showinfo("Help","You can reach the developer at sunidhiyadav99@gmail.com", parent=self.root)
 
     
 
