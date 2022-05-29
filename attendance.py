@@ -253,6 +253,4 @@ if __name__ == "__main__":
         root=Tk()
         object1=attendance_details(root)
         
-
-        root.configure(bg='white') 
         root.mainloop()
