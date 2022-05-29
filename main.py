@@ -117,8 +117,7 @@ class face_recognition(train_data,face_recog):
         AppInfo = """Application Details-
     This application has 6 options-
     1. Student details: View Details of students
-    2. Mark Attendance: Mark your attendance 
-    by showing your face in webcam
+    2. Mark Attendance: Show your face in cam    and press enter to mark your attendance
     3. Attendance Details: See the attendance 
     details recorded for the day
     4. Train data: Train the dataset
