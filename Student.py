@@ -37,11 +37,11 @@ class student_details():
         
 
         #main_frame
-        main_frame=Label(width=878, height=722, bd=2, relief=RIDGE, bg='white')
+        main_frame=Label(width=878, height=722, bd=2, relief=RIDGE,bg='#EEF9FF' )
         main_frame.place(x=0, y=0, width=1920, height=1080)
 
         #title
-        my_label = Label(main_frame, text="Student Details", font=("Quicksand",36,"bold"), bg='white', fg="#05A6F0")
+        my_label = Label(main_frame, text="Student Details", font=("Quicksand",36,"bold"), bg='#EEF9FF', fg="#05A6F0")
         my_label.place(x=673,y=83)
 
 
@@ -220,31 +220,9 @@ class student_details():
         right_frame=LabelFrame(main_frame,bd=2, relief=RIDGE,bg='white', width=878, height=722)
         right_frame.place(x=930, y=236, width=878, height=722)
 
-        #search
-        search_frame=LabelFrame(right_frame, width=832, height=84, bd=2, relief=RIDGE, text="Search", font=("times new roman",16,"bold", "italic"), bg='white', fg="red")
-        search_frame.place(x=23, y=24, width=832, height=84)
 
-        #search criteria
-        search_label=Label(search_frame, text="Search Criteria",font=("times new roman",16),bg='white', fg="red")
-        search_label.place(x=22, y=10)
-        
-        search_label = ttk.Combobox(search_frame,font=("times new roman",16), width=15,  state="readonly", background='white')
-        search_label["values"]=("Select Criteria","Enrollment number","Name","Sub-Batch")
-        search_label.current(0)
-        search_label.place(x=215, y=10, width=162, height=30)
-
-        entry_label = Entry(search_frame,font=("times new roman",16), width=15)
-        entry_label.place(x=390, y=10, width=162, height=30)
-
-        search_button=Button(search_frame, text="Search", font=("times new roman",16),bg='#001C8E', fg="white")
-        search_button.place(x=565, y=10, width=118, height=30)
-
-        show_all_button=Button(search_frame, text="Show All", font=("times new roman",16),bg='#001C8E', fg="white")
-        show_all_button.place(x=703, y=10, width=118, height=30)
-
-
-        table_frame=Frame(right_frame, bd=2, relief=RIDGE, width=832, height=579)
-        table_frame.place(x=23, y=119, width=832, height=579)
+        table_frame=Frame(right_frame, bd=2, relief=RIDGE, width=832, height=579, bg="#EEF9FF")
+        table_frame.place(x=23, y=24, width=832, height=674)
 
         scrollx = ttk.Scrollbar(table_frame, orient=HORIZONTAL)
         scrollx.pack(side=BOTTOM, fill=X)
@@ -253,7 +231,7 @@ class student_details():
         scrolly.pack(side=RIGHT, fill=Y)
         
 
-        self.details_table=ttk.Treeview(table_frame,column=("Enrollment number", "Name", "Degree", "Department", "Year", "Semester", "Sub-Batch", "E-mail"), xscrollcommand=scrollx.set, yscrollcommand=scrolly.set)
+        self.details_table=ttk.Treeview(table_frame,column=("Enrollment number", "Name", "Degree", "Department", "Year", "Semester", "Sub-Batch", "E-mail", "Image"), xscrollcommand=scrollx.set, yscrollcommand=scrolly.set)
 
         
         scrollx.config(command=self.details_table.xview) 
@@ -269,6 +247,7 @@ class student_details():
         self.details_table.heading("Semester",text="Semester")
         self.details_table.heading("Sub-Batch",text="Sub-Batch")
         self.details_table.heading("E-mail",text="E-mail")
+        self.details_table.heading("Image",text="Image Data")
 
         self.details_table["show"]="headings"
 
@@ -476,7 +455,7 @@ class student_details():
                     return_back,img_frame=cam_capture.read()
                     if face_cr(img_frame) is not None:
                         image_id+=1
-                    face_var=cv2.resize(face_cr(img_frame),(600,600))
+                    face_var=cv2.resize(face_cr(img_frame),(450,450))
                     face_var=cv2.cvtColor(face_var,cv2.COLOR_BGR2GRAY)
                     file_path="face_data/user."+str(id)+"."+str(image_id)+".jpg"
                     cv2.imwrite(file_path,face_var)
