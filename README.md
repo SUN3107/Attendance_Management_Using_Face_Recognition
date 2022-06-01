@@ -10,3 +10,6 @@ Steps:-
 6. run: python3 main.py
 7. to run specific pages: python3 Student_details.py
                           python3 attendance.py
+                           
+Updates:-
+1. Changed showing only Present. Now attendance.csv file stores both Arrival and Departure time of the student. 
