@@ -17,14 +17,24 @@ class face_recog:
         with open("attendance.csv","r+",newline="\n") as f:
             my_data=f.readlines()
             name_list=[]
+            n1 = 0
             for line in my_data:
                 enter=line.split((","))
                 name_list.append(enter[0])
+                if(n):
+                    n1+=1
+
             if((n not in name_list) and (j not in name_list)):
                 now=datetime.now()
                 that_date=now.strftime("%d/%m/%Y")
                 time_string=now.strftime("%H:%M")
-                f.writelines(f"\n{j},{n},{that_date},{time_string},Present")
+                f.writelines(f"\n{j},{n},{that_date},{time_string},Arrived")
+            if(n1==2):
+                now=datetime.now()
+                that_date=now.strftime("%d/%m/%Y")
+                time_string=now.strftime("%H:%M")
+                f.writelines(f"\n{j},{n},{that_date},{time_string},Left")
+
 
 
     def face_recogi(self):
@@ -84,7 +94,7 @@ class face_recog:
         video_capture,release()
         cv2.destroyAllWindows() 
 
-        messagebox.showinfo("Success","Attendance Marked")
+        
 
 
 
