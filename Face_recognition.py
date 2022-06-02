@@ -49,7 +49,8 @@ class face_recog:
                 id,predict=classf.predict(gray_img[y:y+h,x:x+w])
                 confidence=int((100*(1-predict/300)))
 
-                connection = pymysql.connect(host="localhost",user="root",passwd="Surnidhi@99",database="face_recognition")
+                connection = pymysql.connect(host="localhost",user="root",
+                                                passwd="Surnidhi@99",database="face_recognition")
                 cursor = connection.cursor()
 
                 cursor.execute("SELECT name from student where enr_no="+str(id))

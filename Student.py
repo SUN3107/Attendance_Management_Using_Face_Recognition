@@ -41,15 +41,19 @@ class student_details():
         main_frame.place(x=0, y=0, width=1920, height=1080)
 
         #title
-        my_label = Label(main_frame, text="Student Details", font=("Quicksand",36,"bold"), bg='#EEF9FF', fg="#05A6F0")
+        my_label = Label(main_frame, 
+                            text="Student Details", font=("Quicksand",36,"bold"), 
+                            bg='#EEF9FF', fg="#05A6F0")
         my_label.place(x=673,y=83)
 
 
 
         combostyle = ttk.Style()
 
-        combostyle.theme_create('combostyle', parent='alt',settings = {'TCombobox':{'configure':{'selectbackground': 'grey','fieldbackground': 'white','background': 'white'}}})
-        # ATTENTION: this applies the new style 'combostyle' to all ttk.Combobox
+        combostyle.theme_create('combostyle', parent='alt',settings = 
+                                    {'TCombobox':{'configure':{'selectbackground': 
+                                                                'grey','fieldbackground': 'white',
+                                                                        'background': 'white'}}})
         combostyle.theme_use('combostyle') 
 
 
@@ -70,42 +74,70 @@ class student_details():
 
 
         #course information
-        current_course_frame=LabelFrame(left_frame, width=832, height=194 ,bd=2, relief=RIDGE, text="Current Course Information", font=("times new roman",16,"bold", "italic"), bg='white')
+        current_course_frame=LabelFrame(left_frame, 
+                                        width=832, height=194 ,
+                                        bd=2, relief=RIDGE, 
+                                        text="Current Course Information", font=("times new roman",16,"bold", "italic"),
+                                        bg='white')
         current_course_frame.place(x=23, y=24, width=832, height=194)
 
         #input values
         #1. Department
-        department_label=Label(current_course_frame, text="Department",font=("times new roman",16),bg='white', fg="red")
+        department_label=Label(current_course_frame, 
+                                text="Department",font=("times new roman",16),
+                                bg='white', fg="red")
         department_label.place(x=18, y=31)
         
-        department_input = ttk.Combobox(current_course_frame, textvariable=self.dept, font=("times new roman",16), width=15, state="readonly")
+        department_input = ttk.Combobox(current_course_frame, 
+                                        textvariable=self.dept, font=("times new roman",16), 
+                                        width=15, 
+                                        state="readonly")
         department_input["values"]=("Select Department","C.S.E.","C.E.","M.E.","E.C.E.","Architecture","M.N.C.")
         department_input.current(0)
         department_input.place(x=201, y=31, width=193, height=30)
 
         #2. Degree
-        Degree_label=Label(current_course_frame, text="Degree",font=("times new roman",16),bg='white', fg="red")
+        Degree_label=Label(current_course_frame, 
+                            text="Degree",font=("times new roman",16),
+                            bg='white', fg="red")
         Degree_label.place(x=438, y=31)
         
-        Degree_label = ttk.Combobox(current_course_frame,textvariable=self.degree,font=("times new roman",16), width=15,  state="readonly", background='white')
+        Degree_label = ttk.Combobox(current_course_frame,
+                                    textvariable=self.degree,
+                                    font=("times new roman",16),
+                                    width=15,
+                                    state="readonly", 
+                                    background='white')
         Degree_label["values"]=("Select Degree","B.Tech","M.Tech","PhD")
         Degree_label.current(0)
         Degree_label.place(x=601, y=31, width=193, height=30)
 
         #3. Year
-        year_label=Label(current_course_frame, text="Year",font=("times new roman",16),bg='white', fg="red")
+        year_label=Label(current_course_frame, 
+                            text="Year",font=("times new roman",16),
+                            bg='white', fg="red")
         year_label.place(x=18, y=103)
         
-        year_label = ttk.Combobox(current_course_frame,textvariable=self.year, font=("times new roman",16), width=15,  state="readonly")
+        year_label = ttk.Combobox(current_course_frame,
+                                    textvariable=self.year, 
+                                    font=("times new roman",16), 
+                                    width=15, 
+                                    state="readonly")
         year_label["values"]=("Select Year","First year","Second year","Third year","Fourth year","Fifth year")
         year_label.current(0)
         year_label.place(x=201, y=103, width=193, height=30)
 
         #4. Semester
-        sem_label=Label(current_course_frame,  text="Semester",font=("times new roman",16),bg='white', fg="red")
+        sem_label=Label(current_course_frame,  
+                            text="Semester",font=("times new roman",16),
+                            bg='white', fg="red")
         sem_label.place(x=438, y=103)
         
-        sem_label = ttk.Combobox(current_course_frame,textvariable=self.semester, font=("times new roman",16), width=15, state="readonly")
+        sem_label = ttk.Combobox(current_course_frame,
+                                    textvariable=self.semester, 
+                                    font=("times new roman",16), 
+                                    width=15, 
+                                    state="readonly")
         sem_label["values"]=("Select Semester","Autumn Semester","Spring Semester")
         sem_label.current(0)
         sem_label.place(x=601, y=103, width=193, height=30)
@@ -115,90 +147,151 @@ class student_details():
 
 
         #class information
-        class_frame=LabelFrame(left_frame, bd=2, width=832, height=281, relief=RIDGE, text="Class Information", font=("times new roman",16,"bold", "italic"), bg='white')
+        class_frame=LabelFrame(left_frame, 
+                                bd=2, relief=RIDGE, 
+                                width=832, height=281, 
+                                text="Class Information", font=("times new roman",16,"bold", "italic"), 
+                                bg='white')
         class_frame.place(x=23, y=244, width=832, height=281)
 
         #input values
 
         #1. Enrollment Number
-        enr_num_label=Label(class_frame, text="Enrollment Number",font=("times new roman",16),bg='white', fg="red")
+        enr_num_label=Label(class_frame, 
+                                text="Enrollment Number",font=("times new roman",16),
+                                bg='white', fg="red")
         enr_num_label.place(x=18, y=31)
         
-        enr_num_label = Entry(class_frame, textvariable=self.enr,font=("times new roman",16), width=15)
+        enr_num_label = Entry(class_frame, 
+                                textvariable=self.enr,
+                                font=("times new roman",16), 
+                                width=15)
         enr_num_label.place(x=201, y=31, width=180, height=30)
 
         #2. Name
-        name_label=Label(class_frame,  text="Name",font=("times new roman",16),bg='white', fg="red")
+        name_label=Label(class_frame,  
+                            text="Name",font=("times new roman",16),
+                            bg='white', fg="red")
         name_label.place(x=438, y=31)
         
-        name_label = Entry(class_frame,textvariable=self.name, font=("times new roman",16), width=15)
+        name_label = Entry(class_frame,
+                            textvariable=self.name, 
+                            font=("times new roman",16), 
+                            width=15)
         name_label.place(x=601, y=31, width=180, height=30)
 
         #3. Sub-Batch
-        sub_batch_label=Label(class_frame,  text="Sub-Batch",font=("times new roman",16),bg='white', fg="red")
+        sub_batch_label=Label(class_frame,  
+                                text="Sub-Batch",font=("times new roman",16),
+                                bg='white', fg="red")
         sub_batch_label.place(x=18, y=92)
         
-        sub_batch_label = Entry(class_frame,textvariable=self.sbatch,font=("times new roman",16), width=15)
+        sub_batch_label = Entry(class_frame,
+                                textvariable=self.sbatch,
+                                font=("times new roman",16), 
+                                width=15)
         sub_batch_label.place(x=201, y=92, width=180, height=30)
 
         #4. Year
-        year_label=Label(class_frame, text="Year",font=("times new roman",16),bg='white', fg="red")
+        year_label=Label(class_frame, 
+                            text="Year",font=("times new roman",16),
+                            bg='white', fg="red")
         year_label.place(x=438, y=92)
         
-        year_label = Entry(class_frame, textvariable=self.year, font=("times new roman",16), width=15)
+        year_label = Entry(class_frame, 
+                            textvariable=self.year, 
+                            font=("times new roman",16), 
+                            width=15)
         year_label.place(x=601, y=92, width=180, height=30)
 
         #5. Semester
-        sem_label=Label(class_frame, text="Semester",font=("times new roman",16),bg='white', fg="red")
+        sem_label=Label(class_frame, 
+                            text="Semester",font=("times new roman",16),
+                            bg='white', fg="red")
         sem_label.place(x=18, y=153)
         
-        sem_label = Entry(class_frame,textvariable=self.semester, font=("times new roman",16), width=15)
+        sem_label = Entry(class_frame,
+                            textvariable=self.semester, 
+                            font=("times new roman",16), 
+                            width=15)
         sem_label.place(x=201, y=153, width=180, height=30)
 
         #6. E-Mail
-        mail_label=Label(class_frame, text="E-Mail",font=("times new roman",16),bg='white', fg="red")
+        mail_label=Label(class_frame, 
+                            text="E-Mail",font=("times new roman",16),
+                            bg='white', fg="red")
         mail_label.place(x=438, y=153)
         
-        mail_label = Entry(class_frame,textvariable=self.mail, font=("times new roman",16), width=15)
+        mail_label = Entry(class_frame,
+                            textvariable=self.mail, 
+                            font=("times new roman",16), 
+                            width=15)
         mail_label.place(x=601, y=153, width=180, height=30)
 
         
 
 
         #Radio-Buttons
-        photo_button=Radiobutton(class_frame, variable=self.photo,text="Take Sample Photo",value="Yes")
+        photo_button=Radiobutton(class_frame, 
+                                    variable=self.photo,
+                                    text="Take Sample Photo",
+                                    value="Yes")
         photo_button.place(x=38, y=215)
 
-        no_photo_button=Radiobutton(class_frame, variable=self.photo,text="No Sample Photo",value="No")
+        no_photo_button=Radiobutton(class_frame, 
+                                        variable=self.photo,
+                                        text="No Sample Photo",
+                                        value="No")
         no_photo_button.place(x=284, y=215)
 
 
 
-        button_frame=LabelFrame(left_frame,highlightthickness = 0, bd=0, relief=RIDGE,  bg='white', width = 832, height=151)
+        button_frame=LabelFrame(left_frame,
+                                    highlightthickness = 0, bd=0, relief=RIDGE,  
+                                    bg='white', 
+                                    width = 832, height=151)
         button_frame.place(x=23, y=547, width = 832, height=151)
 
         #Save button
-        save_button=Button(button_frame, command=self.enter_value, text="Save Data", font=("times new roman",16,"bold"),bg='#F35325', fg="white")
+        save_button=Button(button_frame, 
+                            command=self.enter_value, 
+                            text="Save Data", font=("times new roman",16,"bold"),
+                            bg='#F35325', fg="white")
         save_button.place(x=0, y=0, width = 187, height=65)
 
         #Update button
-        Update_button=Button(button_frame, command=self.update, text="Update Data", font=("times new roman",16,"bold"),bg='#05A6F0', fg="white")
+        Update_button=Button(button_frame, 
+                                command=self.update, 
+                                text="Update Data", font=("times new roman",16,"bold"),
+                                bg='#05A6F0', fg="white")
         Update_button.place(x=215, y=0, width = 187, height=65)
 
         #Delete button
-        Delete_button=Button(button_frame, command=self.delete_value, text="Delete Data", font=("times new roman",16,"bold"),bg='#FFBA08', fg="white")
+        Delete_button=Button(button_frame, 
+                                command=self.delete_value, 
+                                text="Delete Data", font=("times new roman",16,"bold"),
+                                bg='#FFBA08', fg="white")
         Delete_button.place(x=430, y=0, width = 187, height=65)
 
         #Reset button
-        Reset_button=Button(button_frame, text="Reset Data", command=self.reset_value, font=("times new roman",16,"bold"),bg='#81BC06', fg="white")
+        Reset_button=Button(button_frame, 
+                                command=self.reset_value, 
+                                text="Reset Data", font=("times new roman",16,"bold"),
+                                bg='#81BC06', fg="white")
         Reset_button.place(x=645, y=0, width = 187, height=65)
 
         #Take Photo button
-        photo_button=Button(button_frame, command=self.generate_dataset, text="Take Sample Photo", font=("times new roman",16,"bold"),bg='#001C8E', fg="white")
+        photo_button=Button(button_frame, 
+                                command=self.generate_dataset, 
+                                text="Take Sample Photo", font=("times new roman",16,"bold"),
+                                bg='#001C8E', fg="white")
         photo_button.place(x=0, y=86, width = 402, height=65)
 
         #Update Photo button
-        update_photo_button=Button(button_frame, text="Update Sample Photo", font=("times new roman",16,"bold"),bg='#001C8E', fg="white")
+        update_photo_button=Button(button_frame, 
+                                    command=self.generate_dataset, 
+                                    text="Update Sample Photo", font=("times new roman",16,"bold"),
+                                    bg='#001C8E', fg="white")
         update_photo_button.place(x=430, y=86, width = 402, height=65)
 
 
@@ -217,11 +310,17 @@ class student_details():
 
 
         #right_frame
-        right_frame=LabelFrame(main_frame,bd=2, relief=RIDGE,bg='white', width=878, height=722)
+        right_frame=LabelFrame(main_frame,
+                                    bd=2, relief=RIDGE,
+                                    bg='white', 
+                                    width=878, height=722)
         right_frame.place(x=930, y=236, width=878, height=722)
 
 
-        table_frame=Frame(right_frame, bd=2, relief=RIDGE, width=832, height=579, bg="#EEF9FF")
+        table_frame=Frame(right_frame, 
+                                bd=2, relief=RIDGE, 
+                                width=832, height=579, 
+                                bg="#EEF9FF")
         table_frame.place(x=23, y=24, width=832, height=674)
 
         scrollx = ttk.Scrollbar(table_frame, orient=HORIZONTAL)
@@ -231,7 +330,10 @@ class student_details():
         scrolly.pack(side=RIGHT, fill=Y)
         
 
-        self.details_table=ttk.Treeview(table_frame,column=("Enrollment number", "Name", "Degree", "Department", "Year", "Semester", "Sub-Batch", "E-mail", "Image"), xscrollcommand=scrollx.set, yscrollcommand=scrolly.set)
+        self.details_table=ttk.Treeview(table_frame,
+                                            column=("Enrollment number", "Name", "Degree", 
+                                                        "Department", "Year", "Semester", "Sub-Batch", "E-mail", "Image"), 
+                                            xscrollcommand=scrollx.set, yscrollcommand=scrolly.set)
 
         
         scrollx.config(command=self.details_table.xview) 
@@ -274,7 +376,8 @@ class student_details():
             messagebox.showerror("ERROR","Input in All Fields Required")
         else:
             try:
-                connection = pymysql.connect(host="localhost",user="root",passwd="Surnidhi@99",database="face_recognition")
+                connection = pymysql.connect(host="localhost",user="root",
+                                                passwd="Surnidhi@99",database="face_recognition")
                 cursor = connection.cursor()
 
                 cursor.execute('INSERT INTO student VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)',
@@ -337,7 +440,8 @@ class student_details():
             try:
                 tryupdate=messagebox.askyesno("Update","Update Data?", parent=self.root)
                 if tryupdate>0:
-                    connection = pymysql.connect(host="localhost",user="root",passwd="Surnidhi@99",database="face_recognition")
+                    connection = pymysql.connect(host="localhost",user="root",
+                                                    passwd="Surnidhi@99",database="face_recognition")
                     cursor = connection.cursor()
 
                     cursor.execute('UPDATE student SET name=%s, degree=%s, department=%s, year=%s, semester=%s, subbatch=%s, mail=%s, photo=%s where enr_no=%s',(
@@ -373,7 +477,8 @@ class student_details():
                 try:
                     trydelete=messagebox.askyesno("Delete","Delete Data?", parent=self.root)
                     if trydelete>0:
-                        connection = pymysql.connect(host="localhost",user="root",passwd="Surnidhi@99",database="face_recognition")
+                        connection = pymysql.connect(host="localhost",user="root",
+                                                        passwd="Surnidhi@99",database="face_recognition")
                         cursor = connection.cursor()
 
                         cursor.execute('DELETE FROM student WHERE enr_no=%s',self.enr.get())
@@ -413,7 +518,8 @@ class student_details():
             messagebox.showerror("ERROR","Input in All Fields Required")
         else:
             try:
-                connection = pymysql.connect(host="localhost",user="root",passwd="Surnidhi@99",database="face_recognition")
+                connection = pymysql.connect(host="localhost",user="root",
+                                                passwd="Surnidhi@99",database="face_recognition")
                 cursor = connection.cursor()
                 cursor.execute('SELECT * FROM student')
                 data=cursor.fetchall()

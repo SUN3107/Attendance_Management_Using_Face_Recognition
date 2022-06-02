@@ -21,7 +21,9 @@ class face_recognition(train_data,face_recog):
         
 
         #title
-        my_label = Label(main_frame, text="Attendance Management System", font=("Quicksand",36,"bold"), bg='#EEF9FF', fg="#05A6F0")
+        my_label = Label(main_frame, text="Attendance Management System", 
+                        font=("Quicksand",36,"bold"), 
+                        bg='#EEF9FF', fg="#05A6F0")
         my_label.place(x=473,y=83)
 
         
@@ -31,7 +33,11 @@ class face_recognition(train_data,face_recog):
         student_icon=student_icon.resize((238,238),Image.ANTIALIAS)
         self.photo_student_icon=ImageTk.PhotoImage(student_icon)
         
-        student_button=Button(main_frame,image=self.photo_student_icon, command=self.student_details, highlightthickness = 0, bd = 0, text="Student Details", font=("Quicksand",16,"bold"),  bg="#D1EACD", fg="darkblue",compound="top",cursor="hand2")
+        student_button=Button(main_frame,image=self.photo_student_icon, 
+                                command=self.student_details, 
+                                highlightthickness = 0, bd = 0, 
+                                text="Student Details", font=("Quicksand",16,"bold"),  
+                                bg="#D1EACD", fg="darkblue",compound="top",cursor="hand2")
         student_button.place(x=845,y=232,width=238,height=281)
 
 
@@ -43,7 +49,12 @@ class face_recognition(train_data,face_recog):
         face_icon=face_icon.resize((238,238),Image.ANTIALIAS)
         self.photo_face_icon=ImageTk.PhotoImage(face_icon)
         
-        face_button=Button(main_frame,command=self.face_recogi,image=self.photo_face_icon,highlightthickness = 0, bd = 0,text="Mark Attendance",font=("Quicksand",16,"bold"),bg='#EAE9CE', fg="darkblue",compound="top",cursor="hand2")
+        face_button=Button(main_frame,
+                            command=self.face_recogi,
+                            image=self.photo_face_icon,
+                            highlightthickness = 0, bd = 0,
+                            text="Mark Attendance",font=("Quicksand",16,"bold"),
+                            bg='#EAE9CE', fg="darkblue",compound="top",cursor="hand2")
         face_button.place(x=1202,y=232,width=238,height=281)
 
 
@@ -55,7 +66,12 @@ class face_recognition(train_data,face_recog):
         attendance_icon=attendance_icon.resize((238,238),Image.ANTIALIAS)
         self.photo_attendance_icon=ImageTk.PhotoImage(attendance_icon)
         
-        attendance_button=Button(main_frame, command=self.att_details, image=self.photo_attendance_icon,highlightthickness = 0, bd = 0,text="Attendance Details",font=("Quicksand",16,"bold"),bg="#D1EACD", fg="darkblue",compound="top",cursor="hand2")
+        attendance_button=Button(main_frame, 
+                                    command=self.att_details, 
+                                    image=self.photo_attendance_icon,
+                                    highlightthickness = 0, bd = 0,
+                                    text="Attendance Details",font=("Quicksand",16,"bold"),
+                                    bg="#D1EACD", fg="darkblue",compound="top",cursor="hand2")
         attendance_button.place(x=1559,y=232,width=238,height=281)
 
 
@@ -67,7 +83,12 @@ class face_recognition(train_data,face_recog):
         train_icon=train_icon.resize((220,220),Image.ANTIALIAS)
         self.photo_train_icon=ImageTk.PhotoImage(train_icon)
         
-        train_button=Button(main_frame,command=self.train_classify,image=self.photo_train_icon,highlightthickness = 0, bd = 0,text="Train Data",font=("Quicksand",16,"bold"),bg='#EAE9CE', fg="darkblue",compound="top",cursor="hand2")
+        train_button=Button(main_frame,
+                            command=self.train_classify,
+                            image=self.photo_train_icon,
+                            highlightthickness = 0, bd = 0,
+                            text="Train Data",font=("Quicksand",16,"bold"),
+                            bg='#EAE9CE', fg="darkblue",compound="top",cursor="hand2")
         train_button.place(x=845,y=623,width=238,height=281)
 
 
@@ -79,7 +100,12 @@ class face_recognition(train_data,face_recog):
         help_icon=help_icon.resize((220,220),Image.ANTIALIAS)
         self.photo_help_icon=ImageTk.PhotoImage(help_icon)
         
-        help_button=Button(main_frame,image=self.photo_help_icon,command=self.help, highlightthickness = 0, bd = 0,text="Help",font=("Quicksand",16,"bold"), bg="#D1EACD",fg="darkblue",compound="top",cursor="hand2")
+        help_button=Button(main_frame,
+                            image=self.photo_help_icon,
+                            command=self.help, 
+                            highlightthickness = 0, bd = 0,
+                            text="Help",font=("Quicksand",16,"bold"), 
+                            bg="#D1EACD",fg="darkblue",compound="top",cursor="hand2")
         help_button.place(x=1202,y=623,width=238,height=281)
 
 
@@ -91,7 +117,12 @@ class face_recognition(train_data,face_recog):
         exit_icon=exit_icon.resize((220,220),Image.ANTIALIAS)
         self.photo_exit_icon=ImageTk.PhotoImage(exit_icon)
         
-        exit_button=Button(main_frame,image=self.photo_exit_icon, command=self.exit, highlightthickness = 0, bd = 0,text="Exit",font=("quicksand",16,"bold"), bg='#EAE9CE',fg="darkblue",compound="top",cursor="hand2")
+        exit_button=Button(main_frame,
+                            image=self.photo_exit_icon, 
+                            command=self.exit, 
+                            highlightthickness = 0, bd = 0,
+                            text="Exit",font=("quicksand",16,"bold"),
+                            bg='#EAE9CE',fg="darkblue",compound="top",cursor="hand2")
         exit_button.place(x=1559,y=623,width=238,height=281)
 
 
@@ -102,7 +133,11 @@ class face_recognition(train_data,face_recog):
         engage_icon=engage_icon.resize((76,76),Image.ANTIALIAS)
         self.photo_engage_icon=ImageTk.PhotoImage(engage_icon)
         
-        engage_button=Label(main_frame,image=self.photo_engage_icon,highlightthickness = 0,  padx=10,bd = 0,text="Microsoft Engage",font=("quicksand",20,"bold"), bg='#EEF9FF',fg="darkblue",compound="left",cursor="hand2")
+        engage_button=Label(main_frame,
+                            image=self.photo_engage_icon,
+                            highlightthickness = 0, padx=10, bd = 0,
+                            text="Microsoft Engage",font=("quicksand",20,"bold"), 
+                            bg='#EEF9FF',fg="darkblue",compound="left",cursor="hand2")
         engage_button.pack
         engage_url= 'https://acehacker.com/microsoft/engage2022/'
         engage_button.bind("<Button-1>", lambda e:open_url(engage_url))
@@ -110,14 +145,24 @@ class face_recognition(train_data,face_recog):
         
 
 
-        T_app = Text(main_frame, height = 5,font =("Quicksand", 20), foreground="#001C8E",bg='#EEF9FF', width = 52,highlightthickness = 0, padx=10,bd = 0)
-        T_dev = Text(main_frame, height = 5,font =("Quicksand", 19), width = 52, bg='#EEF9FF', highlightthickness = 0, padx=10,bd = 0)
-        T_contact = Text(main_frame, height = 5,font =("Quicksand", 19, "bold"), width = 52, bg='#EEF9FF', highlightthickness = 0, padx=10,bd = 0)
+        T_app = Text(main_frame, height = 5,
+                        font =("Quicksand", 20), 
+                        foreground="#001C8E",bg='#EEF9FF', 
+                        width = 52,highlightthickness = 0, padx=10,bd = 0)
+        T_dev = Text(main_frame, height = 5,
+                        font =("Quicksand", 19), 
+                        width = 52, bg='#EEF9FF', 
+                        highlightthickness = 0, padx=10,bd = 0)
+        T_contact = Text(main_frame, height = 5,
+                            font =("Quicksand", 19, "bold"), 
+                            width = 52, bg='#EEF9FF', 
+                            highlightthickness = 0, padx=10,bd = 0)
         
         AppInfo = """Application Details-
     This application has 6 options-
     1. Student details: View Details of students
-    2. Mark Attendance: Show your face in cam    and press enter to mark your attendance
+    2. Mark Attendance: Mark your attendance 
+    by showing your face in webcam
     3. Attendance Details: See the attendance 
     details recorded for the day
     4. Train data: Train the dataset
@@ -183,7 +228,8 @@ class face_recognition(train_data,face_recog):
 
 
     def help(self):
-        help=tkinter.messagebox.showinfo("Help","You can reach the developer at sunidhiyadav99@gmail.com", parent=self.root)
+        help=tkinter.messagebox.showinfo("Help","You can reach the developer at sunidhiyadav99@gmail.com", 
+                                            parent=self.root)
 
     
 
@@ -205,7 +251,5 @@ if __name__ == "__main__":
     def open_url(url):
         webbrowser.open_new_tab(url)
 
-    root.configure(bg='white') 
-    #root.style = ttk.Style(root)
-    #root.style.configure('TButton',font=("times new roman",24,"bold"))
+    root.configure(bg='white')
     root.mainloop()
